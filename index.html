@@ -1295,6 +1295,236 @@
       border-color: #bfdbfe;
     }
 
+    /* ── Game-Changer §01 (lightbulb + ×4 compare + 4 mini) ── */
+    .lb-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 16px 8px 8px;
+      border-radius: 999px;
+      background: white;
+      border: 1px solid #e9eaf0;
+      color: var(--ink);
+      font-family: var(--cn);
+      font-size: 0.88rem; font-weight: 700;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 24px;
+    }
+    .lb-icon {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #fde047, #f59e0b);
+      display: flex; align-items: center; justify-content: center;
+      color: white;
+      box-shadow: 0 2px 8px rgba(245,158,11,0.35);
+    }
+
+    .game-changer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      margin: 8px 0 32px;
+    }
+    @media (min-width: 768px) {
+      .game-changer-grid {
+        grid-template-columns: 0.85fr 1.15fr;
+        gap: 48px;
+        align-items: center;
+        margin: 8px 0 40px;
+      }
+    }
+
+    .gc-text h2 {
+      font-family: var(--cn);
+      font-weight: 900;
+      font-size: clamp(1.8rem, 7vw, 2.4rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 18px;
+    }
+    .gc-text h2 .blue-em {
+      color: var(--blue-500);
+    }
+    .gc-text p {
+      font-family: var(--cn);
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: var(--ink-mid);
+      margin-bottom: 16px;
+    }
+    .gc-text p strong {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    /* Compare-rich w/ multiplier */
+    .compare-rich {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      align-items: stretch;
+    }
+    @media (min-width: 480px) {
+      .compare-rich {
+        grid-template-columns: 1fr auto 1fr;
+        gap: 6px;
+      }
+    }
+
+    .crc {
+      background: white;
+      border-radius: 22px;
+      padding: 18px 16px 22px;
+      text-align: center;
+      box-shadow: 0 14px 40px rgba(10,14,39,0.07), 0 2px 4px rgba(10,14,39,0.03);
+      border: 1px solid rgba(10,14,39,0.04);
+      position: relative;
+      overflow: hidden;
+    }
+    .crc-flag-row {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 4px 10px;
+      background: linear-gradient(180deg, #f4f7ff, #e9f0ff);
+      border: 1px solid #dde7ff;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+    .crc-flag { font-size: 1rem; }
+    .crc-country {
+      font-family: var(--sans);
+      font-weight: 800;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      color: var(--ink);
+    }
+    .crc-sub {
+      font-family: var(--cn);
+      font-size: 0.78rem;
+      color: var(--ink-mute);
+      margin-bottom: 12px;
+    }
+    .crc-amount {
+      font-family: var(--sans);
+      font-weight: 900;
+      font-size: clamp(1.3rem, 5.5vw, 1.7rem);
+      color: var(--ink);
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+    .crc--usa .crc-amount { color: var(--blue-500); }
+    .crc-period {
+      font-family: var(--cn);
+      font-size: 0.78rem;
+      color: var(--ink-mute);
+      margin-top: 6px;
+    }
+
+    /* Money stack illustration */
+    .bills {
+      position: relative;
+      margin: 18px auto 0;
+      height: 56px;
+      width: 100%;
+      max-width: 160px;
+    }
+    .bills .bill {
+      position: absolute;
+      bottom: 0; left: 50%;
+      width: 92px; height: 44px;
+      border-radius: 5px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--sans);
+      font-weight: 900;
+      font-size: 0.68rem;
+      color: white;
+      letter-spacing: 0.04em;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+      border: 1.5px solid rgba(255,255,255,0.5);
+    }
+    .bills--my .bill {
+      background:
+        linear-gradient(110deg, transparent 45%, rgba(255,255,255,0.18) 50%, transparent 55%),
+        linear-gradient(135deg, #8b5cf6 0%, #5b21b6 100%);
+    }
+    .bills--usa .bill {
+      background:
+        linear-gradient(110deg, transparent 45%, rgba(255,255,255,0.18) 50%, transparent 55%),
+        linear-gradient(135deg, #4ade80 0%, #15803d 100%);
+    }
+    .bill-1 { transform: translateX(-50%) rotate(-13deg) translateX(-18px) translateY(2px); z-index: 1; }
+    .bill-2 { transform: translateX(-50%) rotate(8deg)  translateX(14px); z-index: 3; bottom: 8px; }
+    .bill-3 { transform: translateX(-50%) rotate(-2deg) translateX(0) translateY(-3px); z-index: 2; bottom: 12px; }
+
+    /* Multiplier ×4 */
+    .multiplier {
+      font-family: var(--sans);
+      font-weight: 900;
+      font-size: clamp(2.4rem, 8vw, 3rem);
+      background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+      letter-spacing: -0.04em;
+      padding: 0 8px;
+      align-self: center;
+      line-height: 1;
+      filter: drop-shadow(0 8px 20px rgba(124,58,237,0.25));
+    }
+    @media (min-width: 480px) {
+      .multiplier {
+        padding: 0 4px;
+      }
+    }
+
+    /* 4 mini before/after cards */
+    .ba-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 8px;
+    }
+    @media (min-width: 640px) {
+      .ba-mini-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    .ba-mini {
+      background: white;
+      border-radius: 14px;
+      padding: 14px 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid rgba(10,14,39,0.05);
+      box-shadow: 0 4px 14px rgba(10,14,39,0.04);
+      transition: transform 0.2s;
+    }
+    .ba-mini:hover { transform: translateY(-3px); }
+    .ba-mini-ico {
+      width: 36px; height: 36px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .ba-mini-ico--orange { background: #fed7aa; color: #ea580c; }
+    .ba-mini-ico--blue   { background: #dbeafe; color: #2563eb; }
+    .ba-mini-ico--purple { background: #e9d5ff; color: #7c3aed; }
+    .ba-mini-ico--green  { background: #bbf7d0; color: #15803d; }
+    .ba-mini-text { min-width: 0; line-height: 1.3; }
+    .ba-mini-label {
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--ink-mute);
+      letter-spacing: 0.04em;
+    }
+    .ba-mini-main {
+      font-family: var(--cn);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-top: 2px;
+      line-height: 1.35;
+    }
+
     /* ── Centered trust row with shield ───────────────────── */
     .trust-row--shield {
       margin-top: 18px;
@@ -1638,37 +1868,117 @@
     </div>
   </section>
 
-  <!-- ══ §1 — Your Time Is Undervalued ════════════════ -->
+  <!-- ══ §1 — AI Changed the Game ═════════════════════ -->
   <section class="section-cream">
     <div class="container">
-      <div class="section-head">
-        <div class="section-eyebrow">§ 01 · The Insight</div>
-        <h2 class="h2">你的时间，<br>可能被<span class="serif-i">low-priced.</span></h2>
-        <p class="lede">同样的能力，全球价格不一样。很多人不是能力不够 — 而是一直活在"本地价格"。</p>
-      </div>
-
-      <div class="compare">
-        <div class="compare-card compare-card--before">
-          <div class="cc-flag">🇲🇾</div>
-          <div class="cc-label">在马来西亚</div>
-          <div class="cc-amount mono">RM 3,000</div>
-          <div class="cc-period">/ 月 · 本地市场</div>
-        </div>
-        <div class="compare-divider">
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-            <path d="M2 8h12M9 4l5 4-5 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <div class="lb-badge">
+        <span class="lb-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.5.4 1 1.3 1 2.3v1h6v-1c0-1 .5-1.9 1-2.3A7 7 0 0 0 12 2z"/>
           </svg>
+        </span>
+        AI 改变了游戏规则
+      </div>
+
+      <div class="game-changer-grid">
+        <!-- LEFT: text content -->
+        <div class="gc-text">
+          <h2>
+            同样的工作<br>
+            全球市场<span class="blue-em">价格不一样</span>
+          </h2>
+          <p>很多人不是能力不够，<br>而是一直活在"本地价格"。</p>
+          <p><strong>AI 第一次让普通人</strong><br>也有机会连接全球市场。</p>
         </div>
-        <div class="compare-card compare-card--after">
-          <div class="cc-flag">🇺🇸</div>
-          <div class="cc-label">在全球市场</div>
-          <div class="cc-amount mono">USD 2,500+</div>
-          <div class="cc-period">/ 月 · 甚至更多</div>
+
+        <!-- RIGHT: rich compare cards w/ ×4 multiplier -->
+        <div class="compare-rich">
+          <div class="crc crc--my">
+            <div class="crc-flag-row">
+              <span class="crc-flag">🇲🇾</span>
+              <span class="crc-country">MALAYSIA</span>
+            </div>
+            <div class="crc-sub">本地市场收入</div>
+            <div class="crc-amount">RM 3,000</div>
+            <div class="crc-period">/月</div>
+            <div class="bills bills--my">
+              <span class="bill bill-1">RM 100</span>
+              <span class="bill bill-2">RM 100</span>
+              <span class="bill bill-3">RM 100</span>
+            </div>
+          </div>
+
+          <div class="multiplier">×4</div>
+
+          <div class="crc crc--usa">
+            <div class="crc-flag-row">
+              <span class="crc-flag">🇺🇸</span>
+              <span class="crc-country">USA</span>
+            </div>
+            <div class="crc-sub">全球市场收入</div>
+            <div class="crc-amount">USD 2,500+</div>
+            <div class="crc-period">/月</div>
+            <div class="bills bills--usa">
+              <span class="bill bill-1">$100</span>
+              <span class="bill bill-2">$100</span>
+              <span class="bill bill-3">$100</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="compare-insight">
-        <strong>AI 第一次让普通人</strong>也有机会连接全球市场 — 不需要离开马来西亚。
+      <!-- 4 mini before/after cards -->
+      <div class="ba-mini-grid">
+        <div class="ba-mini">
+          <div class="ba-mini-ico ba-mini-ico--orange">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="8" r="4"/>
+              <path d="M4 21v-1a6 6 0 0 1 16 0v1"/>
+            </svg>
+          </div>
+          <div class="ba-mini-text">
+            <div class="ba-mini-label">以前:</div>
+            <div class="ba-mini-main">时间换收入</div>
+          </div>
+        </div>
+
+        <div class="ba-mini">
+          <div class="ba-mini-ico ba-mini-ico--blue">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/>
+            </svg>
+          </div>
+          <div class="ba-mini-text">
+            <div class="ba-mini-label">现在:</div>
+            <div class="ba-mini-main">AI 放大你的价值</div>
+          </div>
+        </div>
+
+        <div class="ba-mini">
+          <div class="ba-mini-ico ba-mini-ico--purple">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22s-8-7-8-13a8 8 0 0 1 16 0c0 6-8 13-8 13z"/>
+              <circle cx="12" cy="9" r="3"/>
+            </svg>
+          </div>
+          <div class="ba-mini-text">
+            <div class="ba-mini-label">以前:</div>
+            <div class="ba-mini-main">只能本地赚钱</div>
+          </div>
+        </div>
+
+        <div class="ba-mini">
+          <div class="ba-mini-ico ba-mini-ico--green">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M3 12h18M12 3c2.5 2.5 4 5.6 4 9s-1.5 6.5-4 9M12 3c-2.5 2.5-4 5.6-4 9s1.5 6.5 4 9"/>
+            </svg>
+          </div>
+          <div class="ba-mini-text">
+            <div class="ba-mini-label">现在:</div>
+            <div class="ba-mini-main">可以全球接单</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
